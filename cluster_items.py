@@ -48,5 +48,5 @@ if __name__ == "__main__":
     df.to_csv(output_csv, index=False)
     print(f"Saved cluster results to: {output_csv}")
 
-    # Optional: visualize
+    # visualize
     plot_clusters(X, labels)
