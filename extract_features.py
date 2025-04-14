@@ -54,14 +54,17 @@ def save_features_to_csv(features: np.ndarray, image_paths: list, output_path: s
     print(f"Saved features to {output_path}")
 
 if __name__ == "__main__":
-    image_folder = "data"  
-    output_csv = "image_features.csv"
+    image_folder = "data"
+    output_dir = "csv"
+    os.makedirs(output_dir, exist_ok=True)  # Ensure 'csv' folder exists
+    output_csv = os.path.join(output_dir, "image_features.csv")
 
     transform = build_transform()
     resnet = load_resnet18()
-    
+
     print("Extracting features...")
     features, paths = extract_features_for_folder(image_folder, resnet, transform)
-    
+
     print(f"Extracted {len(features)} feature vectors.")
     save_features_to_csv(features, paths, output_csv)
+

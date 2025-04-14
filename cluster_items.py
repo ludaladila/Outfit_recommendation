@@ -1,4 +1,4 @@
-'''try kmeans to cluster all images, not based on label, output as image_clusters.csv '''
+'''use kmeans to cluster all images based on embedding , output as image_clusters.csv '''
 import pandas as pd
 import numpy as np
 from sklearn.cluster import KMeans
@@ -29,8 +29,11 @@ def plot_clusters(X: np.ndarray, labels: np.ndarray, title="KMeans Clusters"):
     plt.show()
 
 if __name__ == "__main__":
-    feature_csv = "image_features.csv"
-    output_csv = "image_clusters.csv"
+    csv_folder = "csv"
+    os.makedirs(csv_folder, exist_ok=True)
+
+    feature_csv = os.path.join(csv_folder, "image_features.csv")
+    output_csv = os.path.join(csv_folder, "image_clusters.csv")
     n_clusters = 3  
 
     # Load features
