@@ -6,13 +6,13 @@ from sklearn.model_selection import train_test_split, KFold
 from sklearn.metrics import mean_squared_error
 import joblib
 
-# === Setup folders ===
+# Setup folders 
 csv_dir = "csv"
 model_dir = "model"
 os.makedirs(csv_dir, exist_ok=True)
 os.makedirs(model_dir, exist_ok=True)
 
-# === Load embeddings ===
+# Load embeddings 
 df_embed = pd.read_csv(os.path.join(csv_dir, "image_clusters.csv"))
 embedding_columns = [str(i) for i in range(512)]
 embedding_dict = {
@@ -20,10 +20,10 @@ embedding_dict = {
     for _, row in df_embed.iterrows()
 }
 
-# === Load scored outfits ===
+# Load scored outfits 
 df_outfits = pd.read_csv(os.path.join(csv_dir, "llava_outfit_scores.csv"))
 
-# === Split anchor filenames ===
+# Split anchor filenames 
 all_anchors = df_outfits["input_image"].apply(lambda x: x.split("\\")[-1]).unique()
 anchors_trainval, anchors_test = train_test_split(all_anchors, test_size=0.2, random_state=42)
 anchors_train, anchors_val = train_test_split(anchors_trainval, test_size=0.2, random_state=42)
@@ -31,7 +31,7 @@ anchors_train, anchors_val = train_test_split(anchors_trainval, test_size=0.2, r
 print(f"Anchors → Train: {len(anchors_train)}, Val: {len(anchors_val)}, Test: {len(anchors_test)}")
 pd.DataFrame({"test_anchors": anchors_test}).to_csv(os.path.join(csv_dir, "test_anchor_images.csv"), index=False)
 
-# === Helper to build feature vector ===
+# Helper to build feature vector 
 def build_vector_from_row(row, score):
     anchor_img = row["input_image"].split("\\")[-1]
     if anchor_img not in embedding_dict:
@@ -50,7 +50,7 @@ def build_vector_from_row(row, score):
         return np.concatenate([anchor_vec] + components), score
     return None
 
-# === Build regression dataset ===
+# Build regression dataset 
 X, y = [], []
 usable_anchors = set(anchors_train) | set(anchors_val)
 
@@ -69,7 +69,7 @@ X = np.array(X)
 y = np.array(y)
 print(f"Created {len(X)} regression samples.")
 
-# === Cross-validation training ===
+# Cross-validation training 
 kf = KFold(n_splits=5, shuffle=True, random_state=42)
 model = RandomForestRegressor(n_estimators=50, random_state=42, n_jobs=-1)
 mse_scores = []
@@ -82,7 +82,7 @@ for train_idx, val_idx in kf.split(X):
     mse = mean_squared_error(y_val, y_pred)
     mse_scores.append(mse)
 
-# === Final model training ===
+# Final model training 
 model.fit(X, y)
 joblib.dump(model, os.path.join(model_dir, "rf_regressor_model.pkl"))
 
