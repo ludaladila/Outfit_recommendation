@@ -128,7 +128,7 @@ We use CLIP as the backbone to a Siamese Neural Network. In our architecture, ea
 
 We trained our model for 3 epochs with learning rate scheduling for robust results.
 
-Using ROC-AUC as a validation metric, we obtain a score of 0.895.
+Using ROC-AUC as a validation metric, we obtain a score of 0.895. The weights to the fine-tuned model are available on Google Drive [at this link](https://drive.google.com/drive/folders/1hAGdJju8bOw-_z2MK0L9RHW1VW9qDCNZ?usp=sharing)
 
 ### Inference Optimization
 
