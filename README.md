@@ -54,6 +54,23 @@ The naive_model implements a CLIP-based category-matching recommendation baselin
 ### Evaluation
 We evaluate recommendation quality using LLaVA by generating a natural-language prompt for each outfit. The model returns a 0–10 score with reasoning, simulating human judgment.
 
+### Result
+The average result is 6.51 and for each category
+| Category | Top 1 | Top 2 |
+| --- | --- | --- |
+| Cardigans & Sweaters | KNIT CARDIGAN | BALLET FLATS |
+| Hoodies & Sweatshirts | SNEAKERS | BAGGY JEANS |
+| Jackets & Coats | SNEAKERS | CHUNKY DERBY SHOES |
+| Jeans | LEATHER BELT | 5-PACK SOCKS |
+| Pants | SNEAKERS | CHUNKY DERBY SHOES |
+| Polos | SNEAKERS | LEATHER BELT |
+| Shirts & Blouses | MICROFIBER CAMISOLE TOP | WIDE HIGH JEANS |
+| Shorts | 5-PACK SPORTS SOCKS WITH DRYMOVE™ | 5-PACK SOCKS |
+| Suits & Blazers | LEATHER BELT | REGULAR FIT FINE-KNIT T-SHIRT |
+| Sweaters & Cardigans | SNEAKERS | SLIM FIT RIBBED TANK TOP |
+| Tops & T-Shirts | DENIM JACKET | SANDALS |
+
+
 ## Non-Deep Learning Models
 ### Data Preparation
 For the non-deep learning model approach, I define a complete outfit as one top + one bottom + one other items(e.g. sunglasses, shoes, perfume). 
