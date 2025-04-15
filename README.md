@@ -76,7 +76,7 @@ The average result is 6.51 and for each category
 For the non-deep learning model approach, I define a complete outfit as one top + one bottom + one other items(e.g. sunglasses, shoes, perfume). 
 1. Embedded all images through a pretrained ResNet-18 model.
 2. Used KMeans to group images into three clusters based on the embeddings.
-3. Based on the cluster, ran a script that randomly picked one item in each cluster to form 700 complete outfits, and let LlaVa rate these outfits.
+3. Based on the cluster, ran a script that randomly picked one item in each cluster to form 700 complete outfits, and let LlaVa rate these outfits from 1-10.
 ### RandomForestRegressor
 1. Took the 700 complete outfits and splitted them into training, validation, and testing set. Saved the testing set and kept them untouched. 
 2. Performed 5-fold cross-validation on the training data(X: outfits, Y: LlaVa score) to evaluate model performance and average the validation MSE across folds.
