@@ -24,9 +24,10 @@ For the non-deep learning model approach, I define a complete outfit as one top 
 3. Let LlaVa rate these outfits again and average the score of these complete items.
 ### Results
 - On testing set itself, the average rating by LlaVa on the outfits before and after implemented RandomForestRegressor is (simply calculating in csv not through script)
-| Before  | After |
-| ----------- | -------- |
-| 7.74   | 8.03   |
+| Before | After |
+|--------|-------|
+| 7.74   | 8.03  |
+
 - Compared the rating of trained RandomForestRegressor and LlaVa, the **MSE = 4.83**
 
 
