@@ -93,7 +93,7 @@ The average result is 6.51 and for each category
 
 ### Data Preparation
 
-For the non-deep learning model approach, I define a complete outfit as one top + one bottom + one other items(e.g. sunglasses, shoes, perfume).
+For the non-deep learning model approach, We define a complete outfit as one top + one bottom + one other items(e.g. sunglasses, shoes, perfume).
 
 1. Embedded all images through a pretrained ResNet-18 model.
 2. Used KMeans to group images into three clusters based on the embeddings.
