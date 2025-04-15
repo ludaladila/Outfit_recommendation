@@ -11,7 +11,10 @@
 Since the approaches we used on three models are really different and might not be fair to use a same method to evaluate across all of them, so we will provide the detail of evaluation of each model separately.
 # 1. Running Instruction
 # 2. Data
-image_dataset: https://drive.google.com/drive/folders/1hAGdJju8bOw-_z2MK0L9RHW1VW9qDCNZ
+image_dataset:[image_dataset](https://drive.google.com/drive/folders/1hAGdJju8bOw-_z2MK0L9RHW1VW9qDCNZ)
+
+We implemented a two-stage Selenium-based scraping pipeline to collect structured outfit data from the H&M website. The first stage collects product links across categories and genders, while the second stage visits each product page to extract detailed metadata and the top 2 recommended matching items. The final dataset (data.xlsx) includes product names, prices, descriptions, image URLs, and suggested pairings, which supports training and evaluation of our outfit recommendation models.
+
 # 3. Approaches
 ## Naive Mean Model
 ## Non-Deep Learning Models
@@ -33,3 +36,5 @@ For the non-deep learning model approach, I define a complete outfit as one top 
 - Comparing the ratings from the trained RandomForestRegressor and LLaVA, the **MSE is 4.83**.
 ## Deep Learning Models
 # 4. Application
+ This is our demo [Outfit_recommendation](https://huggingface.co/spaces/yiqing111/Outfit_recommendation) . 
+ Users can upload a photo and receive personalized outfit suggestions, filtered by clothing categories, with product images and prices displayed.
