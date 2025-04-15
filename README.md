@@ -23,10 +23,8 @@ For the non-deep learning model approach, I define a complete outfit as one top 
 2. Do coisine similarity between items. Keep the top 3 outfit that have nearest coisine similarity, let the saved RandomForestRegressor rate them and keep the one with highest rating.
 3. Let LlaVa rate these outfits again and average the score of these complete items.
 ### Results
-- On testing set itself, the average rating by LlaVa on the outfits before and after implemented RandomForestRegressor is (simply calculating in csv not through script)
-  - **Before**: 7.74
-  - **After**: 8.03
-- Compared the rating of trained RandomForestRegressor and LlaVa, the **MSE = 4.83**
+- On the testing set, the average LLaVA rating for outfits increased from **7.74 to 8.03** after implementing the RandomForestRegressor.
+- Comparing the ratings from the trained RandomForestRegressor and LLaVA, the **MSE is 4.83**.
 
 
 ## Deep Learning Models
