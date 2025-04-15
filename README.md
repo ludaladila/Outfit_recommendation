@@ -120,7 +120,7 @@ For the non-deep learning model approach, I define a complete outfit as one top 
 
 ### Data Preparation
 
-We wrote a script `generate_pairs.py` which generate a dataframe of (product_1, product_2, label) tuples, where `product_1` and `product_2` are product pairs and `label` indicates whether they are complementary or not. We use product name as the unique identifier for a given product, and also create a dictionary of product name and product attributes, where we can easily find product attributes such as path to image, price, description, etc. using the product name as a key.
+We wrote a script `scripts/generate_pairs.py` which generate a dataframe of (product_1, product_2, label) tuples, where `product_1` and `product_2` are product pairs and `label` indicates whether they are complementary or not. We use product name as the unique identifier for a given product, and also create a dictionary of product name and product attributes, where we can easily find product attributes such as path to image, price, description, etc. using the product name as a key. This dictionary is stored in `dataset/product_metadata.json`
 
 ### Model Architecture, Training, Results
 
