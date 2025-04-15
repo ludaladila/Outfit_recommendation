@@ -11,7 +11,7 @@ image_dataset: https://drive.google.com/drive/folders/1hAGdJju8bOw-_z2MK0L9RHW1V
 ## Non-Deep Learning Models
 ### Data Preparation
 For the non-deep learning model approach, I define a complete outfit as one top + one bottom + one other items(e.g. sunglasses, shoes, perfume). 
-1. Embedding all images through a pretrained ResNet-18 model.
+1. Embed all images through a pretrained ResNet-18 model.
 2. Use KMeans to group images into three clusters based on the embeddings.
 3. Based on the cluster, run a script that randomly pick one item in each cluster to form 700 complete outfits, and let LlaVa rate these outfits.
 ### RandomForestRegressor
