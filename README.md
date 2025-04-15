@@ -10,6 +10,37 @@
 ## Evaluation Metric
 Since the approaches we used on three models are really different and might not be fair to use a same method to evaluate across all of them, so we will provide the detail of evaluation of each model separately.
 # 1. Running Instruction
+### Run the demo 
+[Outfit_recommendation](https://huggingface.co/spaces/yiqing111/Outfit_recommendation) . 
+### Run the app locally
+#### **Environment Setup**
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/yourusername/Outfit_recommendation.git
+   cd Outfit_recommendation
+   ```
+
+2. Create a virtual environment and install dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+3. Make sure the following files/folders are present:
+   - `best_model.pt` — pretrained Siamese model checkpoint  
+   - `faiss_indices/` — FAISS index files for each category  
+   - `product_metadata.json` — metadata for product names, categories, prices, image paths  
+   - `all_product_images.zip` — zipped archive of all product images（download form [image_dataset](https://drive.google.com/drive/folders/1hAGdJju8bOw-_z2MK0L9RHW1VW9qDCNZ))
+
+#### **Run the App**
+
+```bash
+streamlit run app.py
+```
+
+Then open your browser at: [http://localhost:8501](http://localhost:8501)
+
+
 # 2. Data
 image_dataset:[image_dataset](https://drive.google.com/drive/folders/1hAGdJju8bOw-_z2MK0L9RHW1VW9qDCNZ)
 
@@ -41,6 +72,8 @@ For the non-deep learning model approach, I define a complete outfit as one top 
 - On the testing set, the average LLaVA rating for outfits increased from **7.74 to 8.03** after implementing the RandomForestRegressor.
 - Comparing the ratings from the trained RandomForestRegressor and LLaVA, the **MSE is 4.83**.
 ## Deep Learning Models
+# Previous approaches 
+Previous studies on outfit recommendation typically fall into two categories: retrieval-based methods and generation-based methods. Retrieval-based systems rely on visual similarity using image embeddings (e.g., from CNNs or CLIP) to find matching items, often leveraging co-occurrence patterns or compatibility graphs. Generation-based methods, on the other hand, use models such as GANs or Transformers to synthesize compatible outfit combinations or directly predict user preferences. Recent works have also explored graph neural networks, style embeddings, and multi-modal fusion to improve contextual matching. However, these methods often require large-scale labeled fashion datasets and careful training to avoid bias or overfitting.
 # 4. Application
  This is our demo [Outfit_recommendation](https://huggingface.co/spaces/yiqing111/Outfit_recommendation) . 
  Users can upload a photo and receive personalized outfit suggestions, filtered by clothing categories, with product images and prices displayed.
