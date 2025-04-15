@@ -89,12 +89,12 @@ For the non-deep learning model approach, I define a complete outfit as one top 
 - On the testing set, the average LLaVA rating for outfits increased from **7.74 to 8.03** after implementing the RandomForestRegressor.
 - Comparing the ratings from the trained RandomForestRegressor and LLaVA, the **MSE is 4.83**.
 ## Deep Learning Models
-# Previous approaches 
+# 4. Previous approaches 
 Previous studies on outfit recommendation typically fall into two categories: retrieval-based methods and generation-based methods. Retrieval-based systems rely on visual similarity using image embeddings (e.g., from CNNs or CLIP) to find matching items, often leveraging co-occurrence patterns or compatibility graphs. Generation-based methods, on the other hand, use models such as GANs or Transformers to synthesize compatible outfit combinations or directly predict user preferences. Recent works have also explored graph neural networks, style embeddings, and multi-modal fusion to improve contextual matching. However, these methods often require large-scale labeled fashion datasets and careful training to avoid bias or overfitting.
-# 4. Application
+# 5. Application
  This is our demo [Outfit_recommendation](https://huggingface.co/spaces/yiqing111/Outfit_recommendation) . 
  Users can upload a photo and receive personalized outfit suggestions, filtered by clothing categories, with product images and prices displayed.
-# 5. Ethics Statement
+# 6. Ethics Statement
 This project is intended for educational and research purposes only. The outfit recommendations are generated based on image similarity and learned style patterns, and may not always reflect diverse cultural, gender, or body-style preferences.
 
 No personal data is stored or used beyond temporary image processing, and all recommendations are non-commercial and anonymized.
