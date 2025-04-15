@@ -1,13 +1,14 @@
 # Outfit_recommendation
 
 # 0. Project Overview
+(jason)
 ## Key Features
-- **Model Approaches:**
+- **Model Approaches:** (yiqing)
   - **Naive Mean Model:**
-  - - **Non-Deep Learning Models:** A classical machine learning model that doesn't rely on deep learning techniques. We use a combination of feature extraction using ResNet and a Random Forest model to train our model.
-    - - **Deep Learning Models:**
+  - **Non-Deep Learning Models:** A classical machine learning model that doesn't rely on deep learning techniques. We use a combination of feature extraction using ResNet and a Random Forest model to train our model.
+  - **Deep Learning Models:** (jason)
 ## Evaluation Metric
-
+Since the approaches we used on three models are really different and might not be fair to use a same method to evaluate across all of them, so we will provide the detail of evaluation of each model separately.
 # 1. Running Instruction
 # 2. Data
 image_dataset: https://drive.google.com/drive/folders/1hAGdJju8bOw-_z2MK0L9RHW1VW9qDCNZ
@@ -30,7 +31,5 @@ For the non-deep learning model approach, I define a complete outfit as one top 
 ### Results
 - On the testing set, the average LLaVA rating for outfits increased from **7.74 to 8.03** after implementing the RandomForestRegressor.
 - Comparing the ratings from the trained RandomForestRegressor and LLaVA, the **MSE is 4.83**.
-
-
 ## Deep Learning Models
 # 4. Application
