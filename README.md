@@ -3,8 +3,8 @@
 # 0. Project Overview
 (jason)
 ## Key Features
-- **Model Approaches:** (yiqing)
-  - **Naive Mean Model:**
+- **Model Approaches:** 
+  - **Naive Mean Model:** A simple CLIP-based baseline that recommends the most frequently co-occurring items within the predicted category of the input image.
   - **Non-Deep Learning Models:** A classical machine learning model that doesn't rely on deep learning techniques. We use a combination of feature extraction using ResNet and a Random Forest model to train our model.
   - **Deep Learning Models:** (jason)
 ## Evaluation Metric
@@ -13,10 +13,16 @@ Since the approaches we used on three models are really different and might not 
 # 2. Data
 image_dataset:[image_dataset](https://drive.google.com/drive/folders/1hAGdJju8bOw-_z2MK0L9RHW1VW9qDCNZ)
 
-We implemented a two-stage Selenium-based scraping pipeline to collect structured outfit data from the H&M website. The first stage collects product links across categories and genders, while the second stage visits each product page to extract detailed metadata and the top 2 recommended matching items. The final dataset (data.xlsx) includes product names, prices, descriptions, image URLs, and suggested pairings, which supports training and evaluation of our outfit recommendation models.
+It implemented a two-stage Selenium-based scraping pipeline to collect structured outfit data from the H&M website. The first stage collects product links across categories and genders, while the second stage visits each product page to extract detailed metadata and the top 2 recommended matching items. The final dataset (data.xlsx) includes product names, prices, descriptions, image URLs, and suggested pairings, which supports training and evaluation of our outfit recommendation models.
 
 # 3. Approaches
 ## Naive Mean Model
+### Description
+
+The naive_model implements a CLIP-based category-matching recommendation baseline. It encodes a user-uploaded image and finds the most similar product from the dataset using cosine similarity in the CLIP embedding space. Based on the matched product’s category, the script then recommends the top-2 most frequently suggested items from that category across the dataset.
+### Evaluation
+We evaluate recommendation quality using LLaVA by generating a natural-language prompt for each outfit. The model returns a 0–10 score with reasoning, simulating human judgment.
+
 ## Non-Deep Learning Models
 ### Data Preparation
 For the non-deep learning model approach, I define a complete outfit as one top + one bottom + one other items(e.g. sunglasses, shoes, perfume). 
@@ -38,3 +44,9 @@ For the non-deep learning model approach, I define a complete outfit as one top 
 # 4. Application
  This is our demo [Outfit_recommendation](https://huggingface.co/spaces/yiqing111/Outfit_recommendation) . 
  Users can upload a photo and receive personalized outfit suggestions, filtered by clothing categories, with product images and prices displayed.
+# 5. Ethics Statement
+This project is intended for educational and research purposes only. The outfit recommendations are generated based on image similarity and learned style patterns, and may not always reflect diverse cultural, gender, or body-style preferences.
+
+No personal data is stored or used beyond temporary image processing, and all recommendations are non-commercial and anonymized.
+
+We encourage responsible and inclusive use of AI models in fashion applications, and welcome further work to address fairness and representation in personalized recommendation systems.
