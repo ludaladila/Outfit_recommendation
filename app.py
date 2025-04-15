@@ -4,7 +4,7 @@ import json
 import zipfile
 from PIL import Image
 from transformers import CLIPImageProcessor, CLIPVisionModel
-from train_siamese_resnet50 import SiameseWithProjection
+from model.train_siamese_resnet50 import SiameseWithProjection
 import faiss
 import numpy as np
 import os
