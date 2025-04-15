@@ -17,7 +17,7 @@ Since the approaches we used on three models are really different and might not 
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/Outfit_recommendation.git
+   git clone https://github.com/yourusername/Outfit_recommendation.git](https://github.com/ludaladila/Outfit_recommendation.git
    cd Outfit_recommendation
    ```
 
